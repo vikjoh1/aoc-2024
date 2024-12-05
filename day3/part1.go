@@ -16,7 +16,6 @@ func main() {
 	}
 	defer file.Close()
 
-	var allResults [][3]int
 	sum := 0
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
@@ -28,7 +27,6 @@ func main() {
 			num1, _ := strconv.Atoi(match[1])
 			num2, _ := strconv.Atoi(match[2])
 			result := num1 * num2
-			allResults = append(allResults, [3]int{num1, num2, num1 * num2})
 			sum += result
 		}
 	}
